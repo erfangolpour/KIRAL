@@ -46,8 +46,6 @@ Use the `align` command to align sequencing reads to the KIR allele database.
 - **`-t <threads>`**: Number of threads to use. Default: Number of hardware threads.
 - **`-o <output_file>`**: Path to save the alignment results.
 
----
-
 ### 2. Analyze Reports
 Use the `report` command to analyze and filter results from a previously generated alignment file.
 
