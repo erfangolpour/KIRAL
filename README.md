@@ -1,5 +1,5 @@
 # KIRAL
-KIRAL is a fast and efficient tool for aligning sequencing reads to a database of over 1600 Killer Immunoglobulin-like Receptor (KIR) allele sequences. Designed for genomic research and immunological studies, KIRAl provides powerful options for aligning reads, selecting alignment methods, and generating detailed reports.
+KIRAL is a fast and efficient tool for aligning sequencing reads to a database of over 1600 Killer Immunoglobulin-like Receptor (KIR) allele sequences. Designed for genomic research and immunological studies, KIRAL provides powerful options for aligning reads, selecting alignment methods, and generating detailed reports.
 
 ## Features
 - **Multiple Alignment Methods**: Choose between `naive`, `regional`, and `categorical` alignment strategies to suit your analysis.
@@ -9,10 +9,10 @@ KIRAL is a fast and efficient tool for aligning sequencing reads to a database o
 ---
 
 ## Installation
-To use KIRAl, clone this repository, then clone and build (minimap2)[https://github.com/lh3/minimap2] in the cloned directory, and build the tool:
+To use KIRAL, clone this repository, then clone and build (minimap2)[https://github.com/lh3/minimap2] in the cloned directory, and build the tool:
 ```bash
 git clone https://github.com/erfangolpour/KIRAL
-cd KIRAl
+cd KIRAL
 git clone https://github.com/lh3/minimap2
 cd minimap2
 make
@@ -89,9 +89,16 @@ Use the `report` command to analyze and filter results from a previously generat
 ---
 
 ## Contributing
-Contributions are welcome! Feel free to submit issues or pull requests to improve KIRAl.
+Contributions are welcome! Feel free to submit issues or pull requests to improve KIRAL.
 
 ---
 
 ## License
-KIRAl is released under the [GNU General Public License v3.0](LICENSE). See the license file for details.
+KIRAL is released under the [GNU General Public License v3.0](LICENSE). See the license file for details.
+
+---
+
+## Acknowledgments
+
+Special thanks to:
+- The developers of [minimap2](https://github.com/lh3/minimap2) for their amazing project. minimap2’s exceptional performance and versatility in sequence alignment have been instrumental in the development of KIRAL.
