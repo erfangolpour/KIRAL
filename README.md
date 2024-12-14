@@ -94,7 +94,7 @@ Contributions are welcome! Feel free to submit issues or pull requests to improv
 ---
 
 ## License
-KIRAL is released under the [GNU General Public License v3.0](LICENSE). See the license file for details.
+KIRAL is released under the [GNU General Public License v3.0](LICENSE).
 
 ---
 
