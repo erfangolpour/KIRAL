@@ -174,16 +174,33 @@ int main(int argc, char const *argv[]) {
 
         if (!output_file.empty()) {
             ofstream out_file(output_file);
-            if (out_file.is_open()) {
-                for (const auto &gene : all_alignments)
-                    for (const auto &allele : gene.second)
-                        for (const auto &alignment : allele.second)
-                            out_file << alignment.read_id << "\t" << alignment.kir_id << "\t" << alignment.allele_id << "\t" << (alignment.reversed ? "1" : "0") << "\t" << alignment.cost << "\t" << alignment.read_start << "\t" << alignment.read_end << "\t" << alignment.query_start << "\t" << alignment.query_end << "\t" << alignment.cigar << endl;
-                out_file.close();
-            } else
-                cerr << "[-] Error: Unable to open file " << output_file << " for writing." << endl;
+            expect(out_file.is_open(), "[-] Error: Unable to open file " + output_file + " for writing.");
+            
+            // Use a buffer to accumulate the output
+            string buffer;
+            const size_t buffer_size = 100 * 1024 * 1024; // 100 MB buffer size
+            for (const auto &gene : all_alignments) {
+                for (const auto &allele : gene.second) {
+                    for (const auto &alignment : allele.second) {
+                        buffer.append(to_string(alignment.read_id) + "\t" + alignment.kir_id + "\t" + alignment.allele_id + "\t" + (alignment.reversed ? "1" : "0") + "\t" + to_string(alignment.cost) + "\t" + to_string(alignment.read_start) + "\t" + to_string(alignment.read_end) + "\t" + to_string(alignment.query_start) + "\t" + to_string(alignment.query_end) + "\t" + alignment.cigar + "\n");
+                        
+                        // Write buffer to file if it exceeds the buffer size
+                        if (buffer.size() >= buffer_size) {
+                            out_file << buffer;
+                            buffer.clear();
+                        }
+                    }
+                }    
+            }
+            
+            // Write any remaining data in the buffer to the file
+            if (!buffer.empty()) {
+                out_file << buffer;
+            }
+            out_file.close();
+            
+            cout << "[+] Results saved to " << output_file << endl;
         }
-        cout << "[+] Results saved to " << output_file << endl;
 
     } else
         return show_help(argv[0]);
