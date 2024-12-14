@@ -9,7 +9,7 @@ KIRAL is a fast and efficient tool for aligning sequencing reads to a database o
 ---
 
 ## Installation
-To use KIRAL, clone this repository, then clone and build (minimap2)[https://github.com/lh3/minimap2] in the cloned directory, and build the tool:
+To use KIRAL, clone this repository, then clone and build [minimap2](https://github.com/lh3/minimap2) in the cloned directory, and build the tool:
 ```bash
 git clone https://github.com/erfangolpour/KIRAL
 cd KIRAL
