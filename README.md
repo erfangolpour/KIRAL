@@ -4,6 +4,7 @@ KIRAL is a fast and efficient tool for aligning sequencing reads to a database o
 ## Features
 - **Multiple Alignment Methods**: Choose between `naive`, `regional`, and `categorical` alignment strategies to suit your analysis.
 - **High Customizability**: Adjust parameters such as the number of representative alleles, error tolerance, and paired-read alignment for maximum flexibility.
+- **Threading Support**: Take full advantage of multi-core systems with configurable threading for faster processing.
 - **Comprehensive Reporting**: Generate detailed reports filtered by read, KIR, or allele identifiers.
 
 ---
@@ -47,7 +48,7 @@ Use the `align` command to align sequencing reads to the KIR allele database.
 
 ---
 
-### 2. Generate Reports
+### 2. Analyze Reports
 Use the `report` command to analyze and filter results from a previously generated alignment file.
 
 #### Command:
